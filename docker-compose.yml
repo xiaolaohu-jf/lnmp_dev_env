@@ -1,0 +1,26 @@
+version: '2'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+      volumes:
+      - "/var/www/cc:/home/wwwroot/default"
+  mysql:
+    image: mysql
+    ports:
+    - "3306:3306"
+    volumes:
+    - "mysql_data:/usr/local/mariadb/var"
+  php:
+  image: php:fpm
+  ports:
+  - "9000:9000"
+volumes: 
+  mysql_data:
+  
+    
+    
+
+    
